@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,k=0,j=0;
+    int n,k=0,j=0,i;
     printf("Enter n:");
     int arr[n];
     int even[n];
@@ -67,17 +67,27 @@ int main()
         printf("%5d",odd[i]);
     }
 
+    /* Merging both ararys */
+    int al=sizeof(odd)/sizeof(odd[0]);
+    int bl=sizeof(even)/sizeof(even[0]);
+
+    int cl=al+bl;
+    int c[cl];
+    for(i=0;i<al;i++)
+    {
+        c[i]=odd[i];
+    }
+    for(i=0;i<bl;i++)
+    {
+        c[al+i]=even[i];
+    }
+    prinft("The merged unsorted arry is:\n");
+    for(i=0;i<cl;i++)
+    {
+        printf("%5d",c[i]);
+    }
 
 
-    /* for(int i=j+1,k=0;i<n;i++,k++)
-    {
-        even[i]=odd[k];
-    }
-    printf("The new array is:\n");
-    for(i=0;i<n;i++)
-    {
-        printf("%5d",even[i]);
-    }
- */
+
 
 }
